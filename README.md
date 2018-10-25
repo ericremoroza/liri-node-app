@@ -38,6 +38,14 @@ Artist name entered...
 ![Insert artist](images/ConcertEltonJohn.png)
 ![Tour Dates](images/ConcertEltonJohnResults.png)
 
+Default Spotify Result
+![Spotify function without input](images/EmptySpotify.png)
+![Spotify no input result](images/EmptySpotifyResult.png)
+
+
+Spotify Input
+![Spotify Input](images/SpotifyInput.png)
+![Spotify Input Result](images/SpotifyInputResult.png)
 ### Useful Notes
 
 If you're on a public network, to run a command, make sure to put the objective in quotation marks, like so:
