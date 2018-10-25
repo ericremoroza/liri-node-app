@@ -17,6 +17,26 @@ npm install fs
 ```
 npm install node-spotify-api
 ```
+* NodeJS
+
+
+## LIRI in Action
+If no title is added after "movie-this"... 
+![Default Movie Input](images/DefaultMovieThis.png)
+... the command line would output data for "Mr. Nobody".
+![Default Movie Input Result](images/DefaultMovieThisResult.png)
+
+Adding a movie title after "movie-this"
+![Adding a movie title](images/MovieThisInput.png)
+![Adding a movie title result](images/MovieInputThisResult.png)
+
+No artist name entered...
+![No artist](images/ConcertThisEmpty.png)
+![No artist result](images/ConcertThisEmptyResult.png)
+
+Artist name entered... 
+![Insert artist](images/ConcertEltonJohn.png)
+![Tour Dates](images/ConcertEltonJohnResults.png)
 
 ### Useful Notes
 
@@ -28,17 +48,3 @@ node liri.js movie-this "The Karate Kid"
 ```
 node liri.js concert-this "Elton John"
 ```
-
-### LIRI in Action
-
-![Default Movie Input](images/DefaultMovieThis.png)
-![Default Movie Input Result](images/DefaultMovieThisResult.png)
-
-![Adding a movie title](images/MovieThisInput.png)
-![Adding a movie title result](images/MovieInputThisResult.png)
-
-![No artist](images/ConcertThisEmpty.png)
-![No artist result](images/ConcertThisEmptyResult.png)
-
-![Insert artist](images/ConcertEltonJohn.png)
-![Tour Dates](images/ConcertEltonJohnResults.png)

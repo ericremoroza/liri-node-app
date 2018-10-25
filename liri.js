@@ -33,7 +33,9 @@ function doThis() {
             var artistName = parameter;
 
             if (artistName === "") {
+                console.log("--------------------------------------");
                 console.log("Your choice of music is undefined.");
+                console.log('¯\_(ツ)_/¯');
             } else {
                 bandsInTown(artistName);
             }
@@ -41,15 +43,15 @@ function doThis() {
 
         //retrieves song info
         case "spotify-this-song":
-            /*
+            
                 var songTitle = parameter;
     
                 if (songTitle === "") {
-                    searchSong("Ace of Base The Sign");
+                    spotifySong("Ace of Base The Sign");
                 } else {
                     spotifySong(songTitle);
                 }
-            */
+            
             break;
 
         //retrieves movie info
@@ -94,7 +96,6 @@ function bandsInTown(artist) {
                     console.log("Venue Name: " + performance.venue.name);
                     console.log("Venue Location: " + performance.venue.city);
                     console.log("Date of Event: " + moment(performance.datetime).format("MM/DD/YYYY"));
-                    console.log("--------------------------------------");
                 }
 
             }
@@ -107,22 +108,30 @@ function bandsInTown(artist) {
 function spotifySong() {
     var songTitle = parameter;
     
-    if (songTitle === "") {
-        searchSong("Ace of Base The Sign");
-    }
+		if(songTitle === ""){
+			songTitle = "ace of base the sign";
+		}
+		params = songTitle;
+		spotify.search({ type: "track", query: params }, function(err, data) {
+			if(!err){
+				var songInfo = data.tracks.items;
+				for (var i = 0; i < 5; i++) {
+					if (songInfo[i] != undefined) {
+                        console.log("--------------------------------------");
+                        console.log("Artist: " + songInfo[i].artists[0].name);
+                        console.log("Song: " + songInfo[i].name);
+                        console.log("Preview URL: " + songInfo[i].preview_url);
+                        console.log("Album: " + songInfo[i].album.name);
+					}
+				}
+			}	else {
+				console.log("Error :"+ err);
+				return;
+			}
+		});
     
 }
 
-//if no song is entered, default to this song
-function searchSong(parameter) {
-    spotify.search({ type: "track", id: "3DYVWvPh3kGwPasp7yjahc" }, function (err, data) {
-        if (err) {
-            return console.log("Error occurred: " + err);
-        }
-
-        console.log(data);
-    });
-}
 
 //pass query URL to retrieve movie info
 function movieThis(movieName) {
@@ -150,7 +159,7 @@ function movieThis(movieName) {
 }
 
 //uses fs node package to read and assimilate text inside random.txt
-function doWhatItSays() {
+function doWhatItSays(parameter) {
 
     fs.readFile("random.txt", "utf8", function(err, data) {
 		if (err) {
