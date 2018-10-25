@@ -35,7 +35,7 @@ node liri.js concert-this "Elton John"
 ![Default Movie Input Result](images/DefaultMovieThisResult.png)
 
 ![Adding a movie title](images/MovieThisInput.png)
-![Adding a movie title result](images/MovieThisInputResult.png)
+![Adding a movie title result](images/MovieInputThisResult.png)
 
 ![No artist](images/ConcertThisEmpty.png)
 ![No artist result](images/ConcertThisEmptyResult.png)
