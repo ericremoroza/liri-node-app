@@ -27,4 +27,7 @@ node liri.js movie-this "The Karate Kid"
 
 ```
 node liri.js concert-this "Elton John"
-``
+```
+
+### LIRI in Action
+![Default Movie Input](images/DefaultMovieThis.png)
