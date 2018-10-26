@@ -46,6 +46,11 @@ Default Spotify Result
 Spotify Input
 ![Spotify Input](images/SpotifyInput.png)
 ![Spotify Input Result](images/SpotifyInputResult.png)
+
+Reading off text file
+![Do This](images/DoThisInput.png)
+![Text Edit](images/TextEdit.png)
+![Do This Result](images/DoThisResult.png)
 ### Useful Notes
 
 If you're on a public network, to run a command, make sure to put the objective in quotation marks, like so:

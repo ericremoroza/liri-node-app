@@ -35,7 +35,7 @@ function doThis() {
             if (artistName === "") {
                 console.log("--------------------------------------");
                 console.log("Your choice of music is undefined.");
-                console.log('¯\_(ツ)_/¯');
+                console.log('¯\\_(ツ)_/¯');
             } else {
                 bandsInTown(artistName);
             }
@@ -46,7 +46,7 @@ function doThis() {
             
                 var songTitle = parameter;
     
-                if (songTitle === "") {
+                if (!songTitle) {
                     spotifySong("Ace of Base The Sign");
                 } else {
                     spotifySong(songTitle);
@@ -108,7 +108,7 @@ function bandsInTown(artist) {
 function spotifySong() {
     var songTitle = parameter;
     
-		if(songTitle === ""){
+		if(!songTitle){
 			songTitle = "ace of base the sign";
 		}
 		params = songTitle;
@@ -159,7 +159,7 @@ function movieThis(movieName) {
 }
 
 //uses fs node package to read and assimilate text inside random.txt
-function doWhatItSays(parameter) {
+function doWhatItSays() {
 
     fs.readFile("random.txt", "utf8", function(err, data) {
 		if (err) {
@@ -170,11 +170,13 @@ function doWhatItSays(parameter) {
 			var randomArray = data.split(",");
 
 			// Sets task to first item in array (i.e. movie-this)
-			task = randomArray[0];
+            task = randomArray[0];
+            console.log(task);
 
 			// Sets optional third parameter to second item in array (i.e. The Karate Kid).
 			parameter = randomArray[1];
-
+            console.log(parameter);
+            
 			// Calls main controller execute action based on task and parameter.
 			doThis(task, parameter);
 		}
